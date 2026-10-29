@@ -1,0 +1,45 @@
+============================================================
+DAY 1 - DOCKER BASICS
+============================================================
+
+# Check Docker version
+docker --version
+
+# Check whether the Docker service is running
+sudo systemctl status docker
+
+# Start Docker service if it is not running
+sudo systemctl start docker
+
+# Run the hello-world test container
+sudo docker run hello-world
+
+# List downloaded Docker images
+sudo docker images
+
+# List only running containers
+sudo docker ps
+
+# List all containers, including stopped ones
+sudo docker ps -a
+
+# Run Nginx in the background and map host port 8080 to container port 80
+sudo docker run -d --name my-nginx -p 8080:80 nginx
+
+# Open this URL in your browser to test Nginx
+# http://localhost:8080
+
+# Stop a container
+sudo docker stop my-nginx
+
+# Start an existing stopped container
+sudo docker start my-nginx
+
+# Restart an existing container
+sudo docker restart my-nginx
+
+# Remove a stopped container
+sudo docker rm my-nginx
+
+# Remove an image (only after containers using it are removed)
+sudo docker rmi nginx
